@@ -1,0 +1,97 @@
+@import '../index.scss';
+.navBar {
+    display:flex;
+    padding: 10px 80px;
+    max-height: 85px;
+    background: $background;
+    &_logo {
+        display: flex;
+        align-items: center;
+        img {
+            width: 67px;
+        }
+        width: 20%;
+        &_txt {
+            margin-left: 15px;
+            color: $text-primary;
+            &_title {
+                color: white;
+                font-family: $base-font-regular;
+                padding: 0;
+                color: inherit;
+                font-size: 45px;
+                margin: 10px 0;
+                line-height: 40px;
+                
+            }
+            &_subTitle {
+                color: inherit;
+                font-family: $base-font-regular;
+                font-size: 30px;
+                margin: 5px 0;
+            }
+        }
+    }
+    &_button {
+        &_login {
+            width: 20%;
+            display: flex;
+            align-items: center;
+        }
+        &.inicio {
+            
+        }
+        &.login {
+            background: rgba(128,128,128,.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    &_menu {
+        display:flex;
+        justify-content: center;
+        width: 60%;
+        align-items: center;
+        
+        &_ul {
+            display: flex;
+            list-style: none;
+        }
+        &_items {
+            cursor: pointer;
+            margin: 0 10px;
+            box-sizing: border-box;
+            a {
+                color: $text-primary;
+                font-family: $base-font-regular;
+                justify-content: space-between;
+                text-decoration: none;
+                position: relative;
+                font-size: 30px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 10px;
+                    left: 0;
+                    background-color: $text-primary;
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+                    
+                }
+                &:hover::after{
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import '../index.scss';
+
+.itemDetail {
+    &__cont {
+        display: flex;
+        color: $text-secundary;
+        font-family: $base-font-regular;
+        border-radius: 10px;
+        border:1px solid $text-secundary;
+        padding:20px;
+        margin: 10px;
+    
+    }
+    &__title {
+        font-size: 45px;
+    }
+    &__description {
+        font-size: 25px;
+    }
+    &__img {
+        padding-right: 20px;
+        max-width: 310px;
+       max-height: 250px;
+    }
+    &__price {
+        font-size: 35px;
+    }
+    &__info {
+
+    }   
+}

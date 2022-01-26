@@ -1,0 +1,52 @@
+@import '../index.scss';
+
+.ItemCount {
+    display:flex;
+    flex-direction: column;
+    max-width: 222px;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    &-cont {
+        display: flex
+    }
+    &_button {
+        border: none;
+        background: $text-secundary;
+        color: $text-primary;
+        font-size: 25px;
+        width: 50px;
+        cursor: pointer;
+        &:hover {
+            background: rgba(128,128,128,.2);
+        }
+        &Add {
+            margin: 10px 0;
+            padding: 10px;
+            background: $text-secundary;
+            color: $text-primary;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid $text-primary;
+            text-align: center;
+            font-family: $base-font-regular;
+            justify-content: center;
+            font-size: 25px;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    &_input {
+        background: rgba(128, 128, 128, 0.2);
+        color: $text-secundary;
+        font-size: 25px;
+        border: none;
+        width: 100%;
+        text-align: center;
+    }
+}

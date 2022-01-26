@@ -1,0 +1,11 @@
+@import '../index.scss';
+
+.itemList {
+    &__cont {
+        display:flex;
+        flex-wrap: wrap;
+        padding: 0 66px;
+        justify-content: center;
+    }
+    
+}
