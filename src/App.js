@@ -1,21 +1,38 @@
-import { BrowserRouter, Link, Routes, Switch, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListcontainer";
+import { contexto } from "./src/components/ContextDemo";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import React from "react";
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Cart from "./components/Cart";
 
 function App() {
   return (
-    <>
+    <div className="App">
+      <ContextDemo>
+        
       <BrowserRouter>
+
         <NavBar />
-        <Routes>
-          <Route exact path="/" element={<ItemListContainer />}></Route>
-          <Route  path="/categoria/:category" element={<ItemListContainer />}></Route>         
-          <Route  path="/item/:id" element={<ItemDetailContainer />}></Route>  
-        </Routes>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route path="/cat/:catId">
+            <ItemListContainer />
+          </Route>
+          <Route path="/item/:itemId">
+            <ItemDetailContainer />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+        <Footer />
       </BrowserRouter>
-    </>
+      </ContextDemo>
+    </div>
   );
 }
 

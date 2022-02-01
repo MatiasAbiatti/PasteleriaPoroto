@@ -1,27 +1,24 @@
-import React from "react";
-import '../scss/components/itemDetail.scss';
-import {useEffect} from 'react'; 
-import {useParams} from 'react-router-dom';
-export default function ItemDetail({item}) {
-    
-    const { userId } = useParams();
-    useEffect( () => {
-        console.log('recibio userId de:', userId);
-        return() => {
-            console.log('va a cambiar el userId:', userId);
-        }
-    },[userId]);
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ItemCount from './ItemCount';
 
-    return (
-        <div className="itemDetail__cont">
-            <div className="itemDetail__img">
-                <img alt="" src={item.pictureUrl}></img>
-            </div>
-            <div className="itemDetail__info">
-                <span className="itemDetail__title">{item.title}</span>
-                <p className="itemDetail__description">Descripcion breve: {item.description}</p>
-                <label className="itemDetail__price">Precio: $ {item.price}</label>
-            </div>
+const ItemDetail = ({ product, onAdd, added }) => {
+  return (
+      <div className='itemDetail'>
+        <div>
+          <img src={product.image} alt={product.title} width='500px' />
         </div>
-    );
+        <div>
+          <h3>{product.title}</h3>
+          <p>{product.category}</p>
+          <p>Price <b>$ {product.price}</b></p>
+          <p>{product.description}</p>
+
+          {added ? <Link to='/cart'>Ir al Carrito</Link> : <ItemCount stock={5} initial={1} onAdd={onAdd} /> }
+
+        </div>
+      </div>
+  )
 }
+
+export default ItemDetail;

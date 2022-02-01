@@ -48,6 +48,9 @@ export default function ItemListContainer() {
                 })
         })
         return <>
+          <div className="listContainer">
+        {loading ? <Loader /> : <ItemList products={products} />}
+      </div>
             <div className="cont-home">
                 <ItemList items={arrayDeProductos}/>
             </div>
